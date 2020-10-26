@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+{% block title%}{% endblock %}
+
+<link rel="stylesheet" href="{% static 'main/css/about.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+<body>
+    <h1>{{title}}</h1>
+    <div class="about-body">
+        <div class="about">
+            <div class="profile-picture">
+                <img src="{% static 'main/images/ioana.jpeg' %}" alt="">
+            </div>
+            <div class="about-content">
+            {% for item in context %}
+                {{ item.body|safe }}
+            {% endfor %}
+            </div>
+            <div class="social-items">
+                <a href="https://www.facebook.com/Beautifybyioanapopa"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/beautify.by.ioana.popa/"><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'main/js/main.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
+{% endblock %}

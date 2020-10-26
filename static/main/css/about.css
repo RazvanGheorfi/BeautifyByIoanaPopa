@@ -1,0 +1,80 @@
+body {
+    background: url('img/hyaluron.jpg');
+    background-size: cover;
+}
+
+.about-body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.about {
+    background-color: hsla(0, 0%, 100%, .5);
+    width: 25%;
+    height: 60%;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: hsla(0, 0%, 0%, .9) 10px 10px 80px;
+}
+
+.profile-picture {
+    top: -60px;
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background: black;
+    z-index: 5;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    filter: grayscale(50%);
+}
+
+.about-content {
+    position: absolute;
+    top: 100px;
+    padding: 10px;
+}
+
+.profile-picture img:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    filter: grayscale(10%);
+}
+
+.social-items {
+    display: none;
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        background: url('img/Ioana.jpeg');
+        background-size: cover;
+    }
+    .profile-picture {
+        display: none;
+    }
+    .about {
+        height: 100vh;
+        width: 100vw;
+    }
+    .social-items {
+        width: 100%;
+        position: absolute;
+        bottom: 10px;
+        text-align: center;
+    }
+    .social-items i {
+        color: black;
+        padding: 0 30px;
+        font-size: 2rem;
+    }
+}

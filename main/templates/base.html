@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
+
+    <title>{% block title %}Beautify by Ioana Popa{% endblock %}</title>
+</head>
+
+<body>
+    <span class="ham" id="hamburger" onclick="hamburgers()"><i class="fas fa-bars"></i></span>
+    <span class="clo" id="closed" onclick="hamburgers()"><i class="fas fa-times"></i></span>
+
+    <nav id="navbar">
+        <a href="{% url 'home' %}" id="logo"><img src="{% static 'main/images/logotransparent.png' %}" alt="logo"></a>
+
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li class="dropdown" onclick="showGallery()"><a href="#">Gallery <span><i class="fas fa-sort-up" id="sort-up"></i><i class="fas fa-sort-down" id="sort-down"></i></span></a>
+                <ul class="dropdown-menu" id="dropdown_menu">
+                    <li><a href="{% url 'hyaluron-gallery'%}">Hyaluron</a></li>
+                    <li><a href="{% url 'makeup-gallery'%}">Makeup</a></li>
+                    <li><a href="{% url 'laminare-gallery'%}">Laminare</a></li>
+                    <li><a href="{% url 'gene-gallery'%}">Gene</a></li>
+                </ul>
+            </li>
+            <li class="dropdown2" onclick="showLearn()"><a href="#">Learn More <span><i class="fas fa-sort-up" id="sort-up2"></i><i class="fas fa-sort-down" id="sort-down2"></i></span></a>
+                <ul class="dropdown-menu2" id="dropdown_menu2">
+                    <li><a href="{% url 'hyaluron-details'%}">Hyaluron</a></li>
+                    <li><a href="{% url 'makeup-details'%}">Makeup</a></li>
+                    <li><a href="{% url 'laminare-details'%}">Laminare</a></li>
+                    <li><a href="{% url 'gene-details'%}">Gene</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="{% url 'about' %}">About</a></li>
+            <li>
+                <a href="{% url 'contact' %}">Contact</a></li>
+            <span id="social-items">
+                    <a href="https://www.facebook.com/Beautifybyioanapopa"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/beautify.by.ioana.popa/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </span>
+        </ul>
+
+    </nav>
+
+    {% block content %} {% endblock content %}
+    <footer>
+        <a href="https://www.facebook.com/Beautifybyioanapopa"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/beautify.by.ioana.popa/"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+    </footer>
+    <script src="{% static 'main/js/base.js' %}"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
+</body>
+
+</html>

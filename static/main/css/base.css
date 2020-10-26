@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    z-index: 2;
+}
+
+nav img {
+    max-height: 100px;
+    margin-left: 10px;
+}
+
+#logo img:hover {
+    transform: scale(1.3);
+    transition: all 0.5s ease-in-out;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 0 20px;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+.dropdown,
+.dropdown2 {
+    position: relative;
+}
+
+.dropdown-menu,
+.dropdown-menu2 {
+    position: absolute;
+    left: 0;
+    padding-left: 0;
+    display: none;
+    width: 100%;
+    text-align: center;
+    background: rgba(160, 158, 158, 0.5);
+    border-radius: 10px;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu2 a:hover {
+    color: red;
+}
+
+.mystyle,
+.mystyle2 {
+    position: absolute;
+    display: block;
+}
+
+.dropdown-menu li,
+.dropdown-menu2 li {
+    padding: 20px 0;
+    display: block;
+}
+
+#sort-down,
+#sort-down2 {
+    display: none;
+}
+
+#sort-up,
+#sort-up2 {
+    display: inline;
+}
+
+.ham,
+.clo {
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    display: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    font-size: 30px;
+    z-index: 2;
+    animation: fromleft 2s;
+}
+
+#social-items {
+    display: none;
+}
+
+footer a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: black;
+}
+
+@keyframes fromleft {
+    from {
+        left: -500px;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    nav {
+        background: rgba(160, 158, 158, 0.5);
+        display: none;
+        width: 100%;
+        text-align: center;
+        animation: mymove 1s;
+    }
+    @keyframes mymove {
+        from {
+            left: -600px;
+        }
+        to {
+            left: 0;
+        }
+    }
+    .ham,
+    .clo {
+        font-size: 40px;
+        color: white;
+        display: inline;
+        padding-left: 10px;
+        position: absolute;
+        z-index: 3;
+    }
+    .clo {
+        display: none;
+    }
+    .ham-hide {
+        display: none;
+    }
+    .clo-show {
+        display: block;
+    }
+    nav img {
+        display: none;
+    }
+    nav ul li {
+        display: block;
+        padding: 0;
+        padding-bottom: 0px;
+        margin: 10px 0px;
+    }
+    .mystyle,
+    .mystyle2 {
+        position: relative;
+        display: block;
+    }
+    .dropdown-menu li,
+    .dropdown-menu2 li {
+        padding: 0;
+    }
+    #social-items {
+        display: inline;
+        font-size: 20px;
+    }
+    #social-items a {
+        padding: 0 30px;
+        color: black;
+    }
+    footer {
+        display: none;
+    }
+}

@@ -1,0 +1,88 @@
+body {
+    background: url('img\\background.png');
+}
+
+nav ul li a {
+    color: black;
+}
+
+footer {
+    display: none;
+}
+
+h1 {
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 100px;
+    text-align: center;
+}
+
+.content {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 160px;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-gap: 50px;
+}
+
+.gallery {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1em, 240px));
+}
+
+.gallery img {
+    transition: 1s;
+    padding: 15px;
+    min-height: 280px;
+    min-width: 200px;
+    max-width: 200px;
+    max-height: 280px;
+    filter: grayscale(40%);
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.gallery img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.items {
+    align-items: center;
+    position: fixed;
+    top: 300px;
+}
+
+.items a {
+    color: black;
+    font-size: 3rem;
+    display: block;
+    padding: 20px 20px;
+}
+
+@media screen and (max-width: 640px) {
+    .social {
+        display: none;
+    }
+    .gallery {
+        display: block;
+        width: 100vw;
+    }
+    .gallery img {
+        max-width: 100%;
+        min-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    nav {
+        position: fixed;
+    }
+    .ham,
+    .clo {
+        position: fixed;
+    }
+}

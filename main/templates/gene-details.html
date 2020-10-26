@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'main/css/details.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/lightbox.min.css' %}">
+<script type="text/javascript" src="main/js/lightbox-plus-jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+<body>
+
+    <div class="content">
+
+        <div class="social">
+            <div class="items">
+                <a href="https://www.facebook.com/Beautifybyioanapopa"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/beautify.by.ioana.popa/"><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="main-content">
+            <h1>Gene fir cu fir</h1>
+            {% for descript in context %}
+            <img src="{{ descript.image.url }}" alt="Hyaluron Pen" width="460px" height="auto" style="float: left; margin-right: 30px;">
+            <p>{{ descript.body|safe }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="{% static 'main/js/lightbox-plus-jquery.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</body>
+
+
+
+
+{% endblock %}

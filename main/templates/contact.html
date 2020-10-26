@@ -1,0 +1,99 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+
+<link rel="stylesheet" href="{% static 'main/css/contact.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+<body>
+    <div class="contact-body">
+        <div class="grid-container">
+            <div class="div-info">
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Aleea Teilor</p>
+                    <p>Targu Jiu, RO</p>
+                </div>
+                <div class="phone">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:0765.451.828">
+                        <p>Tel: 0765.451.828</p>
+                    </a>
+                </div>
+                <div class="email">
+                    <i class="far fa-envelope"></i>
+                    <a href="mailto:beautifybyioanapopa@gmail.com">
+                        <p>beautifybyioanapopa@gmail.com</p>
+                    </a>
+
+                </div>
+                <div class="social-media">
+                    <i style="text-align: center;" class="fab fa-facebook"></i>
+                    <i style="text-align: center;" class="fab fa-instagram"></i>
+                </div>
+            </div>
+            <div class="div-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d838.4007971000227!2d23.27274851600291!3d45.02425761415565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474d8a74439660ef%3A0x794ebbb5089ff4e1!2sAleea%20Teilor%2010%2C%20T%C3%A2rgu%20Jiu%20210006!5e0!3m2!1sro!2sro!4v1601802924439!5m2!1sro!2sro"
+                    width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+
+            <!-- Contact Form -->
+
+            <div class="div-form">
+                {% if message_email %}
+                <div class="response">
+                    <p>{{ message_email }} {% for item in context %}{{item.body|safe}}{% endfor %} </p>
+                </div>
+                {% endif %}
+                <form action="{% url 'contact' %}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Your Name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="fname" name="message-email" placeholder="Your name..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">Your Email</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="lname" name="message-name" placeholder="Email adress..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">Serviciu</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="lname" name="service-choice" placeholder="Hyaluron, makeup, laminare, gene fir cu fir...">
+                        </div>
+                    </div>
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="subject">Message</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="subject" name="message" placeholder="Write something.." style="height:200px"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+<script src="{% static 'main/js/main.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
+{% endblock %}
