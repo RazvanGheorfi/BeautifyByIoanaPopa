@@ -41,7 +41,7 @@
             <div class="div-form">
                 {% if message_email %}
                 <div class="response">
-                    <p>{{ message_email }} {% for item in context %}{{item.body|safe}}{% endfor %} </p>
+                    <p>{{ message_email }} am primit mesajul tau cu privire la serviciul de {{ service_choice }}. Te vom contacta in cel mai scurt timp.</p>
                 </div>
                 {% endif %}
                 <form action="{% url 'contact' %}" method="post">

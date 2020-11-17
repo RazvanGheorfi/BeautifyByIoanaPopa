@@ -61,7 +61,7 @@ def contact(request):
             fail_silently=False,
         )
 
-        return render(request, 'contact.html', {'message_email':message_email, 'context':context})
+        return render(request, 'contact.html', {'message_email':message_email, 'service_choice':service_choice, 'context':context})
     
     else:
         #return page

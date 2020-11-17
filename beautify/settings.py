@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'beautify.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'vikrfkak',
+        'USER': 'vikrfkak',
+        'PASSWORD': 'Fs4wuPVLsrcTWfERxaKxbYcYZF4kp0cb',
+        'HOST': 'rogue.db.elephantsql.com',
+        'PORT': '5432'
     }
 }
 
